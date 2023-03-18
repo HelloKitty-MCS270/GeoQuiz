@@ -101,11 +101,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun updateQuestion(){
-        //val questionTextResId = questionBank[currentIndex].textResId
+    private fun updateQuestion() {
         val questionTextResId = quizViewModel.currentQuestionText
+        val questionImageResId = quizViewModel.currentQuestionImage
 
         binding.questionTextView.setText(questionTextResId)
+        binding.questionImageView.setImageResource(questionImageResId)
     }
 
     private fun calculateScore(){
