@@ -66,6 +66,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         //binding to update question by clicking the text
+        binding.questionImageView.setOnClickListener {
+            quizViewModel.moveToNext()
+            updateQuestion()
+        }
+
+
+        //binding to update question by clicking the text
         binding.questionTextView.setOnClickListener {
             quizViewModel.moveToNext()
             updateQuestion()
@@ -101,11 +108,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun updateQuestion(){
-        //val questionTextResId = questionBank[currentIndex].textResId
+    private fun updateQuestion() {
         val questionTextResId = quizViewModel.currentQuestionText
+        val questionImageResId = quizViewModel.currentQuestionImage
 
         binding.questionTextView.setText(questionTextResId)
+        binding.questionImageView.setImageResource(questionImageResId)
     }
 
     private fun calculateScore(){
