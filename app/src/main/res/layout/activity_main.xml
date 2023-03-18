@@ -5,6 +5,10 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:background="@color/dark_grey"/>
 
     <ImageView
         android:id="@+id/question_image_view"
@@ -12,13 +16,20 @@
         android:layout_height="281dp"
         android:scaleType="centerCrop"
         android:src="@drawable/q1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="14dp"
+        android:background="@color/dark_grey"/>
     <TextView
         android:id="@+id/question_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="24dp"
-        android:text="@string/q1" />
+        android:text="@string/q1"
+        android:textStyle="bold"
+        android:textSize="16sp" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

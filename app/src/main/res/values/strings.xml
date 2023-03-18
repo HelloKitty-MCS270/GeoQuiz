@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GeoQuiz</string>
+    <string name="app_name">GeoQuiz 🇺🇸</string>
     <string name="true_button">True</string>
     <string name="false_button">False</string>
     <string name="correct_string">Correct!</string>
@@ -10,14 +10,14 @@
 
     //question_bank
 
-    <string name="q1">Q1 Sverige is Sweden.</string>
-    <string name="q2">Q2 Montevideo is the capital of Venezuela.</string>
-    <string name="q3">Q3 Deutschland is Denmark.</string>
-    <string name="q4">Q4 Montreal is the capital of Quebec</string>
-    <string name="q5">Q5 Mombasa is the capital of Kenya.</string>
+    <string name="q1">Q1: Sverige is Sweden.</string>
+    <string name="q2">Q2: Montevideo is the capital of Venezuela.</string>
+    <string name="q3">Q3: Deutschland is Denmark</string>
+    <string name="q4">Q4: Montreal is the capital of Quebec</string>
+    <string name="q5">Q5: Mombasa is the capital of Kenya</string>
 
 
-    <string name="question_attempted_message">Already Attempted: 404ERROR</string>
+    <string name="question_attempted_message">Already Attempted: ERROR</string>
     <string name="score_message">"SCORE: %.2f %% "</string>
 
 

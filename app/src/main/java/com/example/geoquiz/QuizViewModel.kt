@@ -17,7 +17,7 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
         Question(R.string.q5, R.drawable.q5, false)
     )
 
-     var currentIndex: Int
+    var currentIndex: Int
         get() = savedStateHandle.get(CURRENT_INDEX_KEY) ?: 0
         set(value) = savedStateHandle.set(CURRENT_INDEX_KEY, value)
 
@@ -31,6 +31,7 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
         get() = questionBank[currentIndex].textResId
     val currentQuestionImage: Int
         get() = questionBank[currentIndex].imageResId
+
     fun moveToNext() {
         Log.d(TAG, "Updating question text", Exception())
         currentIndex = (currentIndex + 1) % questionBank.size
@@ -38,12 +39,10 @@ class QuizViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
     }
 
     fun moveToPrev() {
-        if (currentIndex == 1) {
-            currentIndex = (questionBank.size) - 1
+            currentIndex = (currentIndex - 1)
+            if (currentIndex < 0) {
+                currentIndex = questionBank.size - 1
+            }
+        }
 
-        }
-        else {
-            currentIndex = ((currentIndex - 1 ) % questionBank.size)
-        }
-    }
 }
