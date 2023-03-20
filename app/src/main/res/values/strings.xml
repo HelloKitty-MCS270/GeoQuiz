@@ -8,6 +8,8 @@
     <string name="next_button">Next</string>
     <string name="previous_button">Previous</string>
 
+    <string name="lang_button">Language</string>
+
     //question_bank
 
     <string name="q1">Q1: Sverige is Sweden.</string>
