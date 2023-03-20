@@ -8,7 +8,7 @@
 
 <string name="next_button">Neste</string>
 <string name="previous_button">Forrige</string>
-
+    <string name="lang_button">Sprak</string>
 //question_bank
 
 <string name="q1">Q1: Sweden er Sverige.</string>
