@@ -5,14 +5,6 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
-
-    <Button
-        android:id="@+id/lang_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:text="@string/lang_button" />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="14dp"
