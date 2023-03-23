@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.PopupMenu
 //import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -101,6 +102,16 @@ class MainActivity : AppCompatActivity() {
             quizViewModel.moveToPrev()
             updateQuestion()
 
+        }
+
+        binding.langButton.setOnClickListener{
+            val popup = PopupMenu(this, binding.langButton)
+            val languages = arrayOf("English", "Norwegian")
+
+            languages.forEach { lang ->
+                popup.menu.add(lang)
+            }
+            popup.show()
         }
 
         // this will get you the id for the current question in the question bank
