@@ -7,14 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.PopupMenu
 //import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import com.example.geoquiz.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
-import java.util.*
 
 private const val TAG = "MainActivity" //want to log it to see what's happening
 
@@ -105,23 +103,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.langButton.setOnClickListener{
-            val popup = PopupMenu(this, binding.langButton)
-            val languages = arrayOf("English", "Norwegian")
-
-            languages.forEach { lang ->
-                popup.menu.add(lang)
-            }
-            popup.show()
-        }
-
-
         // this will get you the id for the current question in the question bank
         updateQuestion()
 
     }
-
-
 
     private fun updateQuestion() {
         val questionTextResId = quizViewModel.currentQuestionText
