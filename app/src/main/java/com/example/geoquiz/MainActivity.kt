@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.langButton.setOnClickListener{
             val popup = PopupMenu(this, binding.langButton)
-            val languages = arrayOf("English", "Norsk")
+            val languages = arrayOf("English", "Norwegian", "Español")
 
             languages.forEach { lang ->
                 popup.menu.add(lang)
@@ -129,6 +129,10 @@ class MainActivity : AppCompatActivity() {
                         recreate()
                     }
                     "Norsk" -> {
+                        setLanguageLocale("nb") // Set Norwegian locale
+                        recreate()
+                    }
+                    "Español" -> {
                         setLanguageLocale("nb") // Set Norwegian locale
                         recreate()
                     }
