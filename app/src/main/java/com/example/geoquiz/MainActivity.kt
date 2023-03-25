@@ -3,6 +3,7 @@
 package com.example.geoquiz
 
 import android.app.Activity
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import com.example.geoquiz.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
+import java.util.*
 
 private const val TAG = "MainActivity" //want to log it to see what's happening
 
@@ -104,15 +106,40 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        fun setLanguageLocale(language: String){
+            val locale = Locale(language)
+            Locale.setDefault(locale)
+            val config = Configuration()
+            config.setLocale(locale)
+            baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
+        }
+
         binding.langButton.setOnClickListener{
             val popup = PopupMenu(this, binding.langButton)
-            val languages = arrayOf("English", "Norwegian")
+            val languages = arrayOf("English", "Norsk")
 
             languages.forEach { lang ->
                 popup.menu.add(lang)
             }
+
+            popup.setOnMenuItemClickListener { menuItem ->
+                when(menuItem.title){
+                    "English" -> {
+                        setLanguageLocale("en") // Set English locale
+                        recreate()
+                    }
+                    "Norsk" -> {
+                        setLanguageLocale("nb") // Set Norwegian locale
+                        recreate()
+                    }
+                }
+                true
+            }
+
             popup.show()
         }
+
+
 
         // this will get you the id for the current question in the question bank
         updateQuestion()
